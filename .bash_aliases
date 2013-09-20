@@ -1,0 +1,1 @@
+/home/roux/.bash_aliases
