@@ -1,1 +1,11 @@
-/home/roux/.gitconfig
+[user]
+	name = RouxRC
+	email = b.ooghe@gmail.com
+[core]
+    editor = vim
+[merge]
+    tool = vim
+[color]
+    ui = true
+[alias]
+    wdiff = diff --color-words

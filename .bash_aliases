@@ -1,1 +1,14 @@
-/home/roux/.bash_aliases
+alias cd..='cd ..'
+alias cp='cp -i'
+alias la='ls -A'
+alias ll='ls -l'
+alias lrth='ls -larth'
+alias md='mkdir'
+alias mv='mv -i'
+alias rd='rmdir'
+alias rm='rm -i'
+alias vi='vim'
+alias wl='wc -l'
+alias count='sort | uniq -c'
+alias gti='git'
+
