@@ -98,6 +98,8 @@ if [ -f /etc/bash_completion ] && ! shopt -oq posix; then
     . /etc/bash_completion
 fi
 
+export LANG=fr_FR.UTF-8
+
 # Python Virtual Env
 export WORKON_HOME=$HOME/dev/pyenvs
 source /usr/local/bin/virtualenvwrapper.sh
