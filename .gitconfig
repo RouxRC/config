@@ -3,9 +3,14 @@
 	email = b.ooghe@gmail.com
 [core]
     editor = vim
+    pager = less -r
 [merge]
-    tool = vim
+    tool = vimdiff
 [color]
     ui = true
+    interactive = auto
 [alias]
     wdiff = diff --color-words
+    l = log --graph --pretty=format:'%C(yellow)%h%C(cyan)%d%Creset %s %C(white)- %an, %ar%Creset'
+    ll = log --stat
+    s = status
