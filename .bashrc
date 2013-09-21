@@ -98,6 +98,10 @@ if [ -f /etc/bash_completion ] && ! shopt -oq posix; then
     . /etc/bash_completion
 fi
 
+# Force vim for crontab etc
+export VISUAL=vim
+export EDITOR=vim
+
 export LANG=fr_FR.UTF-8
 
 # Python Virtual Env
