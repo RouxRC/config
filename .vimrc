@@ -63,6 +63,8 @@ autocmd FileType css set omnifunc=csscomplete#CompleteCSS
 autocmd FileType xml set omnifunc=xmlcomplete#CompleteTags
 autocmd FileType php set omnifunc=phpcomplete#CompletePHP
 autocmd FileType perl set omnifunc=perlcomplete#CompletePerl
+" Remove trailing spaces at the end of lines on save
+autocmd FileType python,php,perl,java,bash autocmd BufWritePre <buffer> :%s/\s\+$//e
 " Highlight cursor line/column
 au WinLeave * set nocursorline nocursorcolumn
 au WinEnter * set cursorline cursorcolumn
@@ -71,6 +73,8 @@ set cursorline cursorcolumn
 "also places the cursor in the last place that it was left."
 au BufWinLeave *.* mkview
 au BufWinEnter *.* silent loadview
+"wrap lines in vimdiff
+au FilterWritePre * if &diff | set wrap | endif
 " Map autocompletion to shift tab
 inoremap <S-Tab> <C-n>
 inoremap <Nul> <C-n>
