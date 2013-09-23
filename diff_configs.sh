@@ -1,6 +1,6 @@
 #!/bin/bash
 
-for file in `ls -a | grep -v ".sh$"`; do
+for file in `ls -a | grep -v ".sh$" | grep -v "\.gitconfig\."`; do
   if ! test -d $file && diff {,$HOME/}$file | grep "[<>]" > /dev/null; then
     echo "$file < - > $HOME/$file"
     echo "xxxxxxxxxxxxxxxxxxxxxxxxxxxxx"

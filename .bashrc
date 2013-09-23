@@ -107,6 +107,8 @@ export LANG=fr_FR.UTF-8
 # Python Virtual Env
 export WORKON_HOME=$HOME/dev/pyenvs
 source /usr/local/bin/virtualenvwrapper.sh
+export PIP_VIRTUALENV_BASE=$WORKON_HOME
+export PIP_RESPECT_VIRTUALENV=true
 alias v=workon
 alias v.deactivate=deactivate
 alias v.mk='mkvirtualenv --no-site-packages'

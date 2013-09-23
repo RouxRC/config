@@ -1,3 +1,4 @@
+set encoding=utf8
 " Forget vi compatibility. Must be first: Side effects change subsequent options.
 set nocompatible
 " Allow backspacing over everything in insert mode
@@ -51,6 +52,8 @@ set tabstop=4
 " Custom filetype mappings
 au BufNewFile,BufRead *.article set filetype=html
 au BufNewFile,BufRead *.less set filetype=less
+" twisted tac files
+au BufNewFile,BufRead *.tac set filetype=python
 " remap space to folding
 nnoremap <space> za
 vnoremap <space> zf
@@ -77,6 +80,7 @@ au BufWinEnter *.* silent loadview
 au FilterWritePre * if &diff | set wrap | endif
 " Map autocompletion to shift tab
 inoremap <S-Tab> <C-n>
+" Map autocompletion to ctrl space
 inoremap <Nul> <C-n>
 set completeopt=menuone,longest,preview
 " use more vertical splits

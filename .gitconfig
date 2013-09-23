@@ -1,6 +1,5 @@
-[user]
-	name = RouxRC
-	email = b.ooghe@gmail.com
+[include]
+    path = .gitconfig.user
 [core]
     editor = vim
     pager = less -r
