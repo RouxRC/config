@@ -10,4 +10,5 @@ done
 if ! test -f $HOME/.gitconfig.user; then
   echo "Please copy either .gitconfig.perso or .gitconfig.work into $HOME/.gitconfig.user"
 fi
+cat $HOME/.gitconfig.user .gitconfig > $HOME/.gitconfig
 
