@@ -86,6 +86,8 @@ set completeopt=menuone,longest,preview
 " use more vertical splits
 set splitright
 set splitbelow
+" allow :sudow to save read-only files                                          
+cnoremap sudow w !sudo tee % >/dev/null
 cmap vh :vertical help 
 " display $ sign at end of change and substitute commands
 set cpoptions+=$
