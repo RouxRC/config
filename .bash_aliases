@@ -12,3 +12,5 @@ alias wl='wc -l'
 alias count='sort | uniq -c'
 alias gti='git'
 alias json='python -m json.tool'
+alias serve='python -m SimpleHTTPServer'
+alias unichar="sed 's/\(.\)/\1\n/g' | grep -iv '[a-z0-9]' | sort -u"
