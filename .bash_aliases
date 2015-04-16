@@ -11,4 +11,4 @@ alias vi='vim'
 alias wl='wc -l'
 alias count='sort | uniq -c'
 alias gti='git'
-
+alias json='python -m json.tool'
