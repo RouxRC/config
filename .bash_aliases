@@ -7,6 +7,7 @@ alias md='mkdir'
 alias mv='mv -i'
 alias rd='rmdir'
 alias rm='rm -i'
+alias rgrep='grep -r'
 alias vi='vim'
 alias wl='wc -l'
 alias count='sort | uniq -c'
@@ -16,6 +17,6 @@ alias serve='python -m SimpleHTTPServer'
 alias unichar="sed 's/\(.\)/\1\n/g' | grep -iv '[a-z0-9]' | sort -u"
 alias resolve="curl -w "%{url_effective}" -LsS --insecure --max-redirs 10 -o /dev/null"
 
-if which thefuck > /dev/null; then
+if which thefuck > /dev/null 2>&1; then
   alias wat='$(thefuck $(fc -ln -1))'
 fi
