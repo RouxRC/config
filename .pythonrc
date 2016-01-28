@@ -1,0 +1,59 @@
+# -*- coding: utf-8 -*-
+# from http://sametmax.com/nouveau-fichier-de-start-up-python/ 
+
+# faut que ça marche pareil en P2 et P3
+from __future__ import unicode_literals, print_function, absolute_import
+ 
+import sys, os, re
+import csv, json
+import time
+from datetime import datetime, timedelta
+import random
+import subprocess
+from pprint import pprint
+from codecs import open
+from itertools import *
+from collections import *
+ 
+try:
+    import requests
+except ImportError:
+    pass
+ 
+# activation d'autocompletion si ce n'est pas déjà le cas
+try:
+    import rlcompleter
+    import readline
+    readline.parse_and_bind("tab: complete")
+except ImportError:
+    pass
+ 
+# si on est dans un virtual env
+env = os.environ.get('VIRTUAL_ENV')
+if env:
+    env_name = os.path.basename(env)
+    sys.ps1 = '(%s) %s ' % (env_name, getattr(sys, 'ps1', '>>>'))
+
+    # affichage une fois des modules installés avec pip 
+    print("\nVirtualenv '{}' contains:\n".format(env_name))
+    cmd = subprocess.check_output([env + "/bin/pip", "freeze"],
+                                  stderr=subprocess.STDOUT)
+    try:
+        cmd = cmd.decode('utf8')
+    except:
+        pass
+ 
+    cmd = cmd.strip().split("\n")
+    p = re.compile(r'(^.*\:\s)|((#|@).*$)|(==.*$)')
+    print("'" + "', '".join(sorted(set(os.path.basename(p.sub('', f)) for f in cmd))) + "'\n")
+
+# http://sametmax.com/installer-des-packages-depuis-le-shell-python/
+def pip_install(*packages):
+    """ Install packages diretly in the shell """
+    for name in packages:
+        cmd = [sys.executable, '-m', 'pip', 'install', name]
+        if not hasattr(sys, 'real_prefix'):
+            # Si pas dans un virtual env, install juste
+            # dans le dossier utilisateur
+            cmd.append('--user')
+        subprocess.call(cmd) 

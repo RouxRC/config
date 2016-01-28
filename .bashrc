@@ -75,6 +75,7 @@ export EDITOR=vim
 
 export LANG=fr_FR.UTF-8
 
+export PYTHONSTARTUP=~/.pythonrc
 # Python Virtual Env
 export WORKON_HOME=$HOME/.virtualenvs
 source /usr/local/bin/virtualenvwrapper.sh

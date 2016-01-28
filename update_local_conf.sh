@@ -1,6 +1,6 @@
 #!/bin/bash
 
-for file in gitconfig vimrc bash_aliases bashrc toprc; do
+for file in gitconfig vimrc bash_aliases bashrc toprc pythonrc; do
   if test -f $HOME/.$file; then
     cp -f $HOME/.$file{,.backup-`date +%Y%m%d-%H%M`}
   fi
