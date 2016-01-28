@@ -13,3 +13,5 @@
     l = log --graph --pretty=format:'%C(yellow)%h%C(cyan)%d%Creset %s %C(white)- %an, %ar%Creset'
     ll = log --stat
     s = status
+[push]
+    default = simple
