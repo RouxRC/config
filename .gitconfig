@@ -15,3 +15,5 @@
     s = status
 [push]
     default = simple
+[diff "csv"]
+  wordRegex = [^,\n]+[,\n]|[,]

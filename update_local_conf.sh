@@ -12,6 +12,10 @@ touch $HOME/.thefuck/settings.py
 cp -f $HOME/.thefuck/settings.py{,.backup-`date +%Y%m%d-%H%M`}
 cp -f {,$HOME/}.thefuck/settings.py
 
+mkdir -p $HOME/.config/git
+cp -f $HOME/.config/git/attributes{,.backup-`date +%Y%m%d-%H%M`}
+cp -f gitattributes $HOME/.config/git/attributes
+
 if ! test -f $HOME/.gitconfig.user; then
   echo "Please copy either .gitconfig.perso or .gitconfig.work into $HOME/.gitconfig.user"
 fi
