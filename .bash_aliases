@@ -22,4 +22,11 @@ if which thefuck > /dev/null 2>&1; then
   alias wat='$(thefuck $(fc -ln -1))'
 fi
 
-function likes { echo $1; curl -sLS --insecure "https://www.facebook.com/plugins/like.php?href=$1&send=false&layout=box_count&width=50&show_faces=false&action=recommend" | grep u_0_0 | head -1 | sed 's|^.*u_0_0">||' | sed "s|</span>.*$| likes|"; }
+function likes {
+  echo $1
+  curl -sLS --insecure "https://www.facebook.com/plugins/like.php?href=$1&layout=box_count" |
+   grep u_0_0           |
+   head             -1  |
+   sed 's|^.*u_0_0">||' |
+   sed "s|</span>.*$| likes|"
+}
