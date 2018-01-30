@@ -16,4 +16,6 @@
 [push]
     default = simple
 [diff "csv"]
-  wordRegex = [^,\n]+[,\n]|[,]
+    wordRegex = [^,\n]+[,\n]|[,]
+[pull]
+    rebase = true
