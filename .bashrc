@@ -73,20 +73,31 @@ fi
 export VISUAL=vim
 export EDITOR=vim
 
+# Encoding
 export LANG=fr_FR.UTF-8
-
-export PYTHONSTARTUP=~/.pythonrc
-# Python Virtual Env
-export WORKON_HOME=$HOME/.virtualenvs
-source /usr/local/bin/virtualenvwrapper.sh
-export PIP_VIRTUALENV_BASE=$WORKON_HOME
-export PIP_RESPECT_VIRTUALENV=true
-alias v=workon
-alias v.mk='mkvirtualenv --no-site-packages'
-alias v.mk_withsitepackages='mkvirtualenv'
-
 export LANGUAGE="fr:en"
 export LC_MESSAGES="fr_FR.UTF-8"
 export LC_CTYPE="fr_FR.UTF-8"
 export LC_COLLATE="fr_FR.UTF-8"
+
+# Python Virtual Env
+export PYTHONSTARTUP=~/.pythonrc
+export WORKON_HOME=$HOME/.virtualenvs
+if [ -s /usr/local/bin/virtualenvwrapper.sh ]; then
+  source /usr/local/bin/virtualenvwrapper.sh
+  export PIP_VIRTUALENV_BASE=$WORKON_HOME
+  export PIP_RESPECT_VIRTUALENV=true
+  alias v=workon
+  alias v.mk='mkvirtualenv --no-site-packages'
+  alias v.mk_withsitepackages='mkvirtualenv'
+fi
+if [ -e $HOME/.pyenv ]; then
+  export PATH="$HOME/.pyenv/bin:$PATH"
+  eval "$(pyenv init -)"
+  eval "$(pyenv virtualenv-init -)"
+fi
+
+# NVM (node.js env)
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
 
