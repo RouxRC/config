@@ -79,6 +79,7 @@ export LANGUAGE="fr:en"
 export LC_MESSAGES="fr_FR.UTF-8"
 export LC_CTYPE="fr_FR.UTF-8"
 export LC_COLLATE="fr_FR.UTF-8"
+export LC_ALL="fr_FR.UTF-8"
 
 # Python Virtual Env
 export PYTHONSTARTUP=~/.pythonrc
