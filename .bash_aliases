@@ -15,8 +15,9 @@ alias count='sort | uniq -c'
 alias gti='git'
 alias json='python -m json.tool'
 alias serve='python -m SimpleHTTPServer'
-alias unichar="sed 's/\(.\)/\1\n/g' | grep -iv '[a-z0-9]' | sort -u"
+alias unichar="sed 's/\(.\)/\1\n/g' | grep -iv '[a-z0-9]' | sort -u | grep ."
 alias resolve="curl -w "%{url_effective}" -LsS --insecure --max-redirs 10 -o /dev/null"
+alias pypush='python setup.py sdist upload -r pypi'
 
 if which thefuck > /dev/null 2>&1; then
   alias wat='$(thefuck $(fc -ln -1))'
