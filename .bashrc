@@ -93,10 +93,7 @@ if [ -s /usr/local/bin/virtualenvwrapper.sh ]; then
   alias v.mk_withsitepackages='mkvirtualenv'
 fi
 if [ -e $HOME/.pyenv ]; then
-  export PATH="$HOME/.pyenv/bin:$PATH"
-  eval "$(pyenv init -)"
-  eval "$(pyenv virtualenv-init -)"
-  export PYENV_VIRTUALENV_DISABLE_PROMPT=1
+  alias pyenvenable='export PATH="$HOME/.pyenv/bin:$PATH" && eval "$(pyenv init -)" && eval "$(pyenv virtualenv-init -)" && export PYENV_VIRTUALENV_DISABLE_PROMPT=1'
 fi
 
 # NVM (node.js env)
