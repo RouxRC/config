@@ -103,3 +103,10 @@ fi
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
 
+PATH=$PATH:./node_modules/.bin
+
+if [ -e $HOME/.golang ] && [ -e $HOME/.cargo ]; then
+  export GOPATH="$HOME/.golang"
+  export PATH=$PATH:/usr/local/go/bin:$GOPATH/bin
+  export PATH=$PATH:$HOME/.cargo/bin
+fi

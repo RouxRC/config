@@ -12,12 +12,15 @@ alias rgrep='grep -r'
 alias vi='vim'
 alias wl='wc -l'
 alias count='sort | uniq -c'
+alias sum="awk '{s += \$1} END {print s}'"
 alias gti='git'
 alias json='python -m json.tool'
 alias serve='python -m SimpleHTTPServer'
-alias unichar="sed 's/\(.\)/\1\n/g' | grep -iv '[a-z0-9]' | sort -u | grep ."
+alias unichar="awk '{for(i=1;i<=NF;i++)if("'!'"a[\$i]++)print \$i}' FS=\"\" | sort | grep -vi '[a-z0-9]' | sed 's/.*/\`&\`/'"
+alias unichar2="sed 's/\(.\)/\1\n/g' | grep -iv '[a-z0-9]' | sort -u | grep ."
 alias resolve="curl -w "%{url_effective}" -LsS --insecure --max-redirs 10 -o /dev/null"
-alias pypush='python setup.py sdist upload -r pypi'
+#alias pypush='python setup.py sdist upload -r pypi'
+alias pypush='python setup.py sdist && twine upload dist/*.tar.gz'
 
 if which thefuck > /dev/null 2>&1; then
   alias wat='$(thefuck $(fc -ln -1))'
