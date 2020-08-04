@@ -102,8 +102,11 @@ export NVM_DIR="$HOME/.nvm"
 
 PATH=$PATH:./node_modules/.bin
 
-if [ -e $HOME/.golang ] && [ -e $HOME/.cargo ]; then
+if [ -e $HOME/.golang ]; then
   export GOPATH="$HOME/.golang"
   export PATH=$PATH:/usr/local/go/bin:$GOPATH/bin
+fi
+
+if [ -e $HOME/.cargo ]; then
   export PATH=$PATH:$HOME/.cargo/bin
 fi
