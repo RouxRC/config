@@ -17,8 +17,8 @@ HISTCONTROL=ignoreboth
 shopt -s histappend
 
 # for setting history length see HISTSIZE and HISTFILESIZE in bash(1)
-HISTSIZE=50000
-HISTFILESIZE=50000
+HISTSIZE=100000
+HISTFILESIZE=100000
 
 # check the window size after each command and, if necessary,
 # update the values of LINES and COLUMNS.
@@ -84,8 +84,8 @@ export LC_ALL="fr_FR.UTF-8"
 # Python Virtual Env
 export PYTHONSTARTUP=~/.pythonrc
 export WORKON_HOME=$HOME/.virtualenvs
-if [ -s /usr/local/bin/virtualenvwrapper.sh ]; then
-  source /usr/local/bin/virtualenvwrapper.sh
+if [ -s /usr/local/bin/virtualenvwrapper.sh ] || [ -s /usr/bin/virtualenvwrapper.sh ]; then
+  source /usr/local/bin/virtualenvwrapper.sh || source /usr/bin/virtualenvwrapper.sh
   export PIP_VIRTUALENV_BASE=$WORKON_HOME
   export PIP_RESPECT_VIRTUALENV=true
   alias v=workon
@@ -109,4 +109,5 @@ fi
 
 if [ -e $HOME/.cargo ]; then
   export PATH=$PATH:$HOME/.cargo/bin
+  source $HOME/.cargo/env
 fi
