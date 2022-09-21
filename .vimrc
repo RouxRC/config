@@ -91,3 +91,7 @@ cnoremap sudow w !sudo tee % >/dev/null
 cmap vh :vertical help 
 " display $ sign at end of change and substitute commands
 set cpoptions+=$
+
+:filetype plugin on
+
+
